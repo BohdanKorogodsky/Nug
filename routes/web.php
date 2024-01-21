@@ -26,6 +26,9 @@ Route::get('users/{id?}', function ($id = 'fallbackId') {
     //
 });
 
+Route::get('users/{id}', function ($id) {
+    //
+})->where('id', '[0-9]+');
 
 
 Route::get('/', 'WelcomeController@index');
