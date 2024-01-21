@@ -14,5 +14,39 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('welcome');
+    return 'Hello, World!';
 });
+
+Route::get('users/{id}/friends', function ($id) {
+    //
+});
+
+Route::get('users/{id?}', function ($id = 'fallbackId') {
+    //
+});
+
+
+
+Route::get('/', 'WelcomeController@index');
+
+Route::post('/', function () {
+    // обслуживаем кого-то, отправившего запрос POST на этот маршрут
+});
+
+Route::put('/', function () {
+    // обслуживаем кого-то, отправившего запрос PUT на этот маршрут
+});
+
+Route::delete('/', function () {
+    // Обслуживаем кого-то, отправившего запрос DELETE на этот маршрут
+});
+
+Route::any('/', function () {
+    // Обслуживаем запрос любой команды по этому маршруту
+});
+
+Route::match(['get', 'post'], '/', function () {
+    // Обслуживаем запросы GET или POST по этому маршруту
+});
+
